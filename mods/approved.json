@@ -1,0 +1,25 @@
+{
+  "approved_mods": 
+  [
+    {
+      "id": 0,
+      "name": "Narrow Master Minded",
+      "author": "Kidev",
+      "icon_url": "",
+      "url": "https://github.com/LegionTD2-Mods/NarrowMasterMinded",
+      "version": "1.4.2",
+      "game_version": "10.02.3",
+      "description": "This configurable mod makes a single mastermind legion available"
+    },
+    {
+      "id": 1,
+      "name": "Logless",
+      "author": "Kidev",
+      "icon_url": "",
+      "url": "https://github.com/LegionTD2-Mods/Logless",
+      "version": "1.0.1",
+      "game_version": "10.02.4",
+      "description": "Removes all logs from the game"
+    }
+  ]
+}
