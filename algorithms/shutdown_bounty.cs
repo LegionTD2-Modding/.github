@@ -56,8 +56,7 @@ public static int GetShutdownBounty(ushort player, Dictionary<ushort, float> pow
 	bool teamLeftIsAhead = avgPowerScore_teamLeft >= avgPowerScore_teamRight;
 	
 	List<ushort> usersInTeamAhead =
-			teamLeftIsAhead ? new List<ushort>{1, 2, 3, 4}
-				: new List<ushort>{5, 6, 7, 8};
+			teamLeftIsAhead ? new List<ushort>{1, 2, 3, 4} : new List<ushort>{5, 6, 7, 8};
 	
 	int teamAhead_numUsers = (teamLeftIsAhead ? teamLeft_numUsers : teamRight_numUsers);
 	float aheadTeamPowerScore = (teamLeftIsAhead ? avgPowerScore_teamLeft : avgPowerScore_teamRight);
