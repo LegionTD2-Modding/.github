@@ -1,6 +1,6 @@
 /**
  *	Shutdown Bounty logic in v10.02.5 
- *	Detailed explanation here: https://github.com/LegionTD2-Mods/.github/wiki/Important-game-algorithms-explained#shutdown-bounty
+ *	Detailed explanation here: https://github.com/LegionTD2-Mods/.github/wiki/Details-on-some-mechanisms#shutdown-bounty
  *
  *	Notes:
  *	- powerScores.ContainsKey(user_id): used as a way to check a if a player is active ? or a bot ?
