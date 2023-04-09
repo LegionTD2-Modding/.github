@@ -1,17 +1,13 @@
 /**
  *	Shutdown Bounty logic in v10.02.5 
  *	Detailed explanation here: https://github.com/LegionTD2-Modding/.github/wiki/Details-on-game-logic#shutdown-bounty
- *
- *	Notes:
- *	- powerScores.ContainsKey(user_id): used as a way to check a if a player is active ? or a bot ?
- *	- A shutdown can only happen when one team's average power score is above the other's 
  **/
 public static int GetShutdownBounty(ushort player, Dictionary<ushort, float> powerScores)
 {
 	// Return value
 	int playerBounty = 0;
 
-	// Boilerplate
+	// Get all needed data
 	float avgPowerScore_teamLeft = 0.0;
 	float avgPowerScore_teamRight = 0.0;
 	int teamLeft_numUsers = 0;
