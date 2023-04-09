@@ -3,5 +3,5 @@
 
 This is the homepage of the Legion TD 2 modding project! Visit the wiki for guides and more!
 
-### [WIKI](https://github.com/LegionTD2-Modding/.github/wiki)
+### [WIKI](wiki)
 
