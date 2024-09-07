@@ -1,0 +1,35 @@
+name: Verify Signatures
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  GPG_KEY_ID: 4E8CD129EB607A51
+
+jobs:
+  verify-signatures:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up GPG and fetch public key
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y gnupg
+        gpg --version
+        gpg --keyserver hkps://keys.openpgp.org --recv-keys ${{ env.GPG_KEY_ID }}
+        gpg --list-keys
+
+    - name: Verify signatures
+      run: |
+        cd mods
+        make verify
+
+    - name: Report verification result
+      if: failure()
+      run: |
+        echo "Signature verification failed. Please check the integrity of the files and signatures."
+        exit 1

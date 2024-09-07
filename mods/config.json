@@ -1,0 +1,75 @@
+{
+    "core":{
+        "name":"Mods Gate",
+        "author":"kidev",
+        "icon_url":"https://raw.githubusercontent.com/LegionTD2-Modding/ModdingGate/main/icon.png",
+        "url":{
+            "*":"https://github.com/LegionTD2-Modding/ModsGate/releases/download/v$/ModsGate.zip"
+        },
+        "version":"1.0.0",
+        "game_version":"11.07.1",
+        "description":"The Legion TD2 mod manager",
+        "inject_html":"https://raw.githubusercontent.com/LegionTD2-Modding/.github/main/mods/mods_menu.html",
+        "inject_line":100,
+        "dependancies":[
+            {
+                "win":"https://raw.githubusercontent.com/LegionTD2-Modding/.github/main/mods/core/Core_win.zip",
+                "linux":"https://raw.githubusercontent.com/LegionTD2-Modding/.github/main/mods/core/Core_linux.zip"
+            }
+        ],
+        "dependancies_versions":[
+            {
+                "name":"BepInEx",
+                "version":"5.4.23.2"
+            },
+            {
+                "name":"Runtime Unity Editor",
+                "version":"5.4.1"
+            },
+            {
+                "name":"ConfigurationManager",
+                "version":"18.3"
+            }
+        ],
+        "installers":{
+            "win":"https://raw.githubusercontent.com/LegionTD2-Modding/.github/main/mods/core/LegionTD2-Mods-Installer.ps1",
+            "linux":"https://raw.githubusercontent.com/LegionTD2-Modding/.github/main/mods/core/LegionTD2-Mods-Installer.sh"
+        },
+        "signatures":"https://raw.githubusercontent.com/LegionTD2-Modding/.github/main/mods/signatures/"
+    },
+    "mods":[
+        {
+            "name":"ProLeak Engine",
+            "author":"kidev",
+            "icon_url":"https://raw.githubusercontent.com/LegionTD2-Modding/ProLeakEngine/main/icon.png",
+            "url":{
+                "*":"https://github.com/LegionTD2-Modding/ProLeakEngine/releases/download/v$/ProLeakEngine.zip"
+            },
+            "version":"1.0.0",
+            "game_version":"11.07.1",
+            "description":"Streams Legion TD2 game events to the ProLeak API"
+        },
+        {
+            "name":"Narrow Master Minded",
+            "author":"kidev",
+            "icon_url":"",
+            "url":{
+                "*":"https://github.com/LegionTD2-Modding/NarrowMasterMinded/releases/download/v$/NarrowMasterMinded.zip"
+            },
+            "version":"1.4.2",
+            "game_version":"10.02.3",
+            "description":"This configurable mod makes a single mastermind legion available"
+        },
+        {
+            "name":"Logless",
+            "author":"kidev",
+            "icon_url":"",
+            "url":{
+                "*":"https://github.com/LegionTD2-Modding/Logless/releases/download/v$/Logless.zip"
+            },
+            "version":"1.0.1",
+            "game_version":"10.02.4",
+            "description":"Removes all logs from the game"
+        }
+    ]
+}

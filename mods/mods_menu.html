@@ -1,0 +1,56 @@
+﻿
+    <!-- MODS -->
+    <script type="text/javascript" id="__mods-script">
+
+        // Rewrites the options content to add the Mods section
+        function __addModSection() {
+            var keyId = optionsMenu[optionsMenu.length - 1].key + 1;
+            optionsMenu.push({ key: keyId++, menuId: keyId, name: "__ModsMenu", displayName: "Mods", content: React.createElement(ModsOptions, {}), narrow: true });
+        }
+    
+        // Hijacks the loadConfig callback of the forceReloadView event
+        // Forces the use of the new optionsMenu by adding to the original code the call to our MOD_NMM_addModSection()
+        // It makes sure the Mods tab does not disappear from the options menu when language is changed for ex
+        engine.off('forceReloadView');
+        engine.on('forceReloadView', function () {
+            console.log("[ModsGate] Force reloading view to display the mods menu")
+            loadConfig();
+            __addModSection();
+        });
+    
+        // Creates the React component that displays the Mods tab
+        ModsOptions = React.createClass({
+            render: function () {
+                return (
+                    React.createElement('ul', { className: 'options-container' },
+                        React.createElement('h1', { style: { color: "white" } }, "Mods Options"),
+                        
+                        React.createElement('p', { },
+                            React.createElement('span', {
+                                style: { color: "#ffcc00" }
+                            }, "Mods Gate"),
+                            React.createElement('div', { className: 'simple-tooltip flipped-y' },
+                                React.createElement('img', {
+                                    src: 'hud/img/small-icons/help.png', style: {
+                                        width: '16px',
+                                        marginLeft: '8px'
+                                    }
+                                }),
+                                React.createElement('span', {
+                                    className: 'tooltiptext',
+                                    dangerouslySetInnerHTML: {
+                                        __html: "By kidev, version 1.0.0<br>Mod manager that can install and update mods"
+                                    }
+                                })
+                            )
+                        )
+                    )
+                );
+            }
+        });
+        
+        // Always for the use of our optionsMenu from the start, before the render
+        __addModSection();
+
+    </script>
+    <!-- End MODS -->
