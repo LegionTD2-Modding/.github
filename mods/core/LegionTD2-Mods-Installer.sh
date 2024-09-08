@@ -2,7 +2,7 @@
 
 set -e
 
-REQUIRED_DEPS=(curl jq unzip)
+REQUIRED_DEPS=(curl jq unzip protontricks)
 
 command_exists() {
   command -v "$1" >/dev/null 2>&1
@@ -59,6 +59,11 @@ extract_zip() {
   unzip -o "$1" -d "$2"
 }
 
+restart_steam() {
+    echo "Restarting Steam to apply the changes..."
+    xdg-open steam://restart
+}
+
 config_url="https://raw.githubusercontent.com/LegionTD2-Modding/.github/main/mods/config.json"
 config_file="config.json"
 download_file "$config_url" "$config_file"
@@ -83,6 +88,7 @@ file "$dependencies_zip"
 
 steam_path="$HOME/.steam/steam"
 game_path="$steam_path/steamapps/common/Legion TD 2"
+APP_ID="469600"
 
 if [ ! -d "$game_path" ]; then
   echo "Legion TD 2 folder not found in the default Steam location."
@@ -106,3 +112,21 @@ rm "$core_zip" "$dependencies_zip"
 rm -rf "$temp_dir"
 
 echo "Installation complete! Mods have been installed to: $game_path"
+
+# Use Protontricks to configure winhttp library override for the game
+echo "Configuring Protontricks for Legion TD 2..."
+protontricks "$APP_ID" win7
+WINEPREFIX="$HOME/.steam/steam/steamapps/compatdata/$APP_ID/pfx" WINEARCH=win64 winecfg -v winhttp.dll
+
+# Apply winhttp override in winecfg
+WINEPREFIX="$HOME/.steam/steam/steamapps/compatdata/$APP_ID/pfx" winecfg -v winhttp.dll
+
+# Force Steam to use Proton Experimental for Legion TD 2
+echo "Forcing Proton Experimental for Legion TD 2..."
+# Create or modify Steam compatibility file
+mkdir -p "$HOME/.steam/steam/steamapps/compatdata/$APP_ID"
+echo '{ "compat_tool": "proton_experimental" }' > "$HOME/.steam/steam/steamapps/compatdata/$APP_ID/compatibilitytool.vdf"
+
+restart_steam
+
+echo "Protontricks configuration complete. Launch Legion TD 2 from Steam."
