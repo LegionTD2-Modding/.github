@@ -11,12 +11,12 @@
         "description":"The Legion TD2 mod manager",
         "inject_html":"https://raw.githubusercontent.com/LegionTD2-Modding/.github/main/mods/mods_menu.html",
         "inject_line":100,
-        "dependancies":[
+        "dependencies":[
             {
                 "*":"https://raw.githubusercontent.com/LegionTD2-Modding/.github/main/mods/core/Core.zip"
             }
         ],
-        "dependancies_versions":[
+        "dependencies_versions":[
             {
                 "name":"BepInEx",
                 "version":"5.4.23.2"
