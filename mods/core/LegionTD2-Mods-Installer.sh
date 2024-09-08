@@ -2,7 +2,7 @@
 
 set -e
 
-REQUIRED_DEPS=(curl jq unzip protontricks)
+REQUIRED_DEPS=(curl jq unzip protontricks winetricks)
 
 command_exists() {
   command -v "$1" >/dev/null 2>&1
@@ -112,22 +112,16 @@ find "$temp_dir" -name "*.dll" -exec mv {} "$plugins_dir" \;
 rm "$core_zip" "$dependencies_zip"
 rm -rf "$temp_dir"
 
-echo "Installation complete! Mods have been installed to: $game_path"
+echo "Mods have been installed to: $game_path"
 
 # Use Protontricks to configure winhttp library override for the game
 echo "Configuring Protontricks for Legion TD 2..."
-protontricks "$APP_ID" win10
-WINEPREFIX="$HOME/.steam/steam/steamapps/compatdata/$APP_ID/pfx" WINEARCH=win64 winecfg -v winhttp.dll
+echo "Follow the instructions:"
+echo "https://github.com/LegionTD2-Modding/.github/wiki/Configure-Proton-for-Linux"
+echo ""
+echo "protontricks --gui"
 
-# Apply winhttp override in winecfg
-WINEPREFIX="$HOME/.steam/steam/steamapps/compatdata/$APP_ID/pfx" winecfg -v winhttp.dll
-
-# Force Steam to use Proton Experimental for Legion TD 2
-echo "Forcing Proton Experimental for Legion TD 2..."
-# Create or modify Steam compatibility file
-mkdir -p "$HOME/.steam/steam/steamapps/compatdata/$APP_ID"
-echo '{ "compat_tool": "proton_experimental" }' >"$HOME/.steam/steam/steamapps/compatdata/$APP_ID/compatibilitytool.vdf"
-
-restart_steam
+protontricks --gui
 
 echo "Protontricks configuration complete. Launch Legion TD 2 from Steam."
+echo "Installation complete"
