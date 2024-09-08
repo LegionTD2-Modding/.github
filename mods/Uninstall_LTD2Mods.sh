@@ -25,8 +25,8 @@ REMOVE_LIST=(
     "BepInEx"
     ".doorstop_version"
     "changelog.txt"
-    "libdoorstop.so"
-    "run_bepinex.sh"
+    "winhttp.dll"
+    "doorstop_config.ini"
 )
 
 for item in "${REMOVE_LIST[@]}"; do
