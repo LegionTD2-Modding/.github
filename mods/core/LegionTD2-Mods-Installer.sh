@@ -102,7 +102,7 @@ plugins_dir="$game_path/BepInEx/plugins"
 mkdir -p "$plugins_dir"
 find "$temp_dir" -name "*.dll" -exec mv {} "$plugins_dir" \;
 
-rm "$config_file" "$core_zip" "$dependencies_zip"
+rm "$core_zip" "$dependencies_zip"
 rm -rf "$temp_dir"
 
 echo "Installation complete! Mods have been installed to: $game_path"
