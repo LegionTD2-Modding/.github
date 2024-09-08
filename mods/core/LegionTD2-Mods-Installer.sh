@@ -51,6 +51,10 @@ download_file() {
   curl -L -o "$2" "$1"
 }
 
+download_binary_file() {
+  curl -L --remote-name-all -O "$1"
+}
+
 extract_zip() {
   unzip -o "$1" -d "$2"
 }
@@ -60,13 +64,22 @@ config_file="config.json"
 download_file "$config_url" "$config_file"
 
 core_version=$(jq -r '.core.version' "$config_file")
-core_url=$(jq -r '.core.url["*"]' "$config_file" | sed "s/\$/$core_version/")
-dependencies_url=$(jq -r '.core.dependancies[0].linux' "$config_file")
+core_url=$(jq -r '.core.url["*"]' "$config_file" | sed "s/\\\$/${core_version}/")
+dependencies_url=$(jq -r '.core.dependancies[0]["*"]' "$config_file")
 
 core_zip="ModsGate.zip"
-dependencies_zip="Core_linux.zip"
-download_file "$core_url" "$core_zip"
-download_file "$dependencies_url" "$dependencies_zip"
+dependencies_zip="Core.zip"
+
+download_binary_file "$core_url"
+download_binary_file "$dependencies_url"
+
+if [ ! -f "$core_zip" ] || [ ! -f "$dependencies_zip" ]; then
+  echo "Error: Failed to download one or both zip files."
+  exit 1
+fi
+
+file "$core_zip"
+file "$dependencies_zip"
 
 steam_path="$HOME/.steam/steam"
 game_path="$steam_path/steamapps/common/Legion TD 2"
@@ -91,8 +104,5 @@ find "$temp_dir" -name "*.dll" -exec mv {} "$plugins_dir" \;
 
 rm "$config_file" "$core_zip" "$dependencies_zip"
 rm -rf "$temp_dir"
-
-chmod +x "$game_path/run_bepinex.sh"
-bash "$game_path/run_bepinex.sh"
 
 echo "Installation complete! Mods have been installed to: $game_path"

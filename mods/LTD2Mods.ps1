@@ -14,7 +14,7 @@ Download-File -Url $configUrl -OutputFile $configFile
 $config = Get-Content $configFile | ConvertFrom-Json
 $installerUrl = $config.core.installers.win
 
-$installerFile = "LegionTD2-Mods-Installer.msi"
+$installerFile = "LegionTD2-Mods-Installer.ps1"
 Download-File -Url $installerUrl -OutputFile $installerFile
 
 Start-Process msiexec.exe -Wait -ArgumentList "/i $installerFile /qn"

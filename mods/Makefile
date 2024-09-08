@@ -5,8 +5,7 @@ FILES_TO_SIGN := \
 	mods_menu.html \
 	Uninstall_LTD2Mods.ps1 \
 	Uninstall_LTD2Mods.sh \
-	core/Core_linux.zip \
-	core/Core_win.zip \
+	core/Core.zip \
 	core/LegionTD2-Mods-Installer.ps1 \
 	core/LegionTD2-Mods-Installer.sh
 

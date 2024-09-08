@@ -41,10 +41,10 @@ Download-File -Url $configUrl -OutputFile $configFile
 $config = Get-Content $configFile | ConvertFrom-Json
 $coreVersion = $config.core.version
 $coreUrl = $config.core.url.'*' -replace '\$', $coreVersion
-$dependenciesUrl = $config.core.dependancies[0].win
+$dependenciesUrl = $config.core.dependancies[0].'*'
 
 $coreZip = "ModsGate.zip"
-$dependenciesZip = "Core_win.zip"
+$dependenciesZip = "Core.zip"
 Download-File -Url $coreUrl -OutputFile $coreZip
 Download-File -Url $dependenciesUrl -OutputFile $dependenciesZip
 

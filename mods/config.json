@@ -13,8 +13,7 @@
         "inject_line":100,
         "dependancies":[
             {
-                "win":"https://raw.githubusercontent.com/LegionTD2-Modding/.github/main/mods/core/Core_win.zip",
-                "linux":"https://raw.githubusercontent.com/LegionTD2-Modding/.github/main/mods/core/Core_linux.zip"
+                "*":"https://raw.githubusercontent.com/LegionTD2-Modding/.github/main/mods/core/Core.zip",
             }
         ],
         "dependancies_versions":[
