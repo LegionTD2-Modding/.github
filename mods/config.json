@@ -1,6 +1,7 @@
 {
     "core":{
         "name":"Mods Gate",
+        "guid":"org.kidev.ltd2.modsgate",
         "author":"kidev",
         "icon_url":"https://raw.githubusercontent.com/LegionTD2-Modding/ModdingGate/main/icon.png",
         "url":{
@@ -9,8 +10,7 @@
         "version":"1.0.0",
         "game_version":"11.07.1",
         "description":"The Legion TD2 mod manager",
-        "inject_html":"https://raw.githubusercontent.com/LegionTD2-Modding/.github/main/mods/mods_menu.html",
-        "inject_line":100,
+        "ui_patches":"https://raw.githubusercontent.com/LegionTD2-Modding/.github/main/mods/UIPatches.zip",
         "dependencies":[
             {
                 "*":"https://raw.githubusercontent.com/LegionTD2-Modding/.github/main/mods/core/Core.zip"
@@ -39,6 +39,7 @@
     "mods":[
         {
             "name":"ProLeak Engine",
+            "guid":"org.kidev.ltd2.proleak.engine",
             "author":"kidev",
             "icon_url":"https://raw.githubusercontent.com/LegionTD2-Modding/ProLeakEngine/main/icon.png",
             "url":{
@@ -50,6 +51,7 @@
         },
         {
             "name":"Narrow Master Minded",
+            "guid":"org.kidev.ltd2.narrowmasterminded",
             "author":"kidev",
             "icon_url":"",
             "url":{
@@ -61,6 +63,7 @@
         },
         {
             "name":"Logless",
+            "guid":"org.kidev.ltd2.logless",
             "author":"kidev",
             "icon_url":"",
             "url":{
