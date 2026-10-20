@@ -1,14 +1,14 @@
-## Legion TD 2 Modding
+<img width="360" height="130" alt="proleak-logo" src="https://github.com/user-attachments/assets/94849ec7-d97f-48ad-be8d-9ac798d06d0f" />
 
-[ProLeak](https://github.com/LegionTD2-Modding/ProLeak) is a mod platform for Legion TD 2:
+### Welcome to Nova
 
-- **Replay your games**: every game saved to a file, watched again as a spectator or from your
-  seat, with a Watch button in your match history.
-- **Stream events**: waves, leaks and chat sent to OBS overlays, Twitch bots and scripts.
-- **Local games**: the official rules against bots on your own computer, with the sandbox and the
-  special modes.
-- **Plugins**: Python code that adds menus, nameplates, chat commands and sounds to the game,
-  installed from its Mods menu.
+[ProLeak](https://github.com/LegionTD2-Modding/ProLeak) is a modding platform for Legion TD 2:
+
+- **Plugins**: use and write Python plugins that can interact and modify the game. They are as easy to install (directly from an in game menu) as they are to create thanks to a carefully crafted API and a huge set of helping tools
+- **Stream events**: waves, leaks, chat, every action... Directly *leaked* from the game straight to to OBS overlays, scripts, or anything you could want   
+- **Replay your games**: every game you play is saved to a file: watch it again as a spectator or from your seat, simply using a Watch button in your match history.  
+- **Local games**: ProLeak comes with its own local game server. You can go crazy and mod a game server that you can run locally and play with your Steam friends. We're talking about turning the game into an RTS, playing as the King in first person...
+
 
 | Start here | |
 |---|---|
