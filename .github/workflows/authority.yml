@@ -1,0 +1,30 @@
+name: authority
+
+on:
+  push:
+    paths: ["authority/**", ".github/workflows/authority.yml"]
+  pull_request:
+    paths: ["authority/**", ".github/workflows/authority.yml"]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: org
+
+      # ProLeak's own parser checks the files, as the game will read them.
+      - uses: actions/checkout@v4
+        with:
+          repository: LegionTD2-Modding/ProLeak
+          path: proleak
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: proleak/global.json
+
+      - name: Validate the authority files
+        env:
+          ProLeakAuthorityDir: ${{ github.workspace }}/org/authority
+        run: dotnet test proleak/tests/ProLeak.Core.Tests -c Release --filter "FullyQualifiedName~RegistryTests.ThePublishedAuthorityFilesValidate"
