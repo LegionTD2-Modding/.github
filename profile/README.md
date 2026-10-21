@@ -17,4 +17,6 @@
 | [Your first plugin](https://github.com/LegionTD2-Modding/.github/wiki/Your-first-plugin) | A working plugin in ten minutes |
 | [Issues and Requests](https://github.com/LegionTD2-Modding/ProLeak/issues) | Share bugs and ask for things you want in ProLeak |
 
-The project is maintained by [kidev](https://github.com/Kidev) and followed by the developers of Legion TD 2.
+The project is maintained by [kidev](https://github.com/Kidev) and followed by the developers of Legion TD 2.  
+
+<a href='https://ko-fi.com/I0H3297ZTK' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi6.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
