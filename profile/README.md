@@ -1,4 +1,4 @@
-![ProLeak](https://proleak.kidev.org/images/proleak-logo.svg)
+![ProLeak](proleak-logo.svg)
 
 ### Welcome to Nova
 
