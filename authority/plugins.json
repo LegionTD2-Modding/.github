@@ -1,4 +1,15 @@
 {
   "schema": 1,
-  "plugins": []
+  "plugins": [
+    {
+      "id": "kidev.unit-tags",
+      "repo": "LegionTD2-Modding/unit-tags",
+      "description": "Puts a name from your list above each fighter you place."
+    },
+    {
+      "id": "kidev.unit-pov",
+      "repo": "LegionTD2-Modding/unit-pov",
+      "description": "See the game through the eyes of any unit."
+    }
+  ]
 }
