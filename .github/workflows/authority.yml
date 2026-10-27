@@ -14,7 +14,7 @@ jobs:
         with:
           path: org
 
-      # ProLeak's own parser checks the files, as the game will read them.
+      # ProLeak's own parser checks the file, as the game will read it.
       - uses: actions/checkout@v7
         with:
           repository: LegionTD2-Modding/ProLeak
@@ -24,7 +24,7 @@ jobs:
         with:
           global-json-file: proleak/global.json
 
-      - name: Validate the authority files
+      - name: Validate the authority file
         env:
           ProLeakAuthorityDir: ${{ github.workspace }}/org/authority
-        run: dotnet test proleak/tests/ProLeak.Core.Tests -c Release --filter "FullyQualifiedName~RegistryTests.ThePublishedAuthorityFilesValidate"
+        run: dotnet test proleak/tests/ProLeak.Core.Tests -c Release --filter "FullyQualifiedName~RegistryTests.ThePublishedAuthorityFileValidates"
