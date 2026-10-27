@@ -1,4 +1,4 @@
-name: authority
+name: Authority file check
 
 on:
   push:
