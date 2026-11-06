@@ -2,7 +2,7 @@
 
 ### Welcome to Nova
 
-[ProLeak](https://proleak.kidev.org/) is a modding platform for Legion TD 2:
+[ProLeak](https://proleak.org/) is a modding platform for Legion TD 2:
 
 - **Plugins**: use and write Python plugins that can interact and modify the game. They are as easy to install (directly from the game menu) as they are to create thanks to a carefully crafted API and a huge set of helping tools
 - **Stream events**: waves, leaks, chat, every action... Directly *leaked* from the game straight to OBS overlays, scripts, or anything you could want
@@ -12,9 +12,9 @@
 
 | Start here | |
 |---|---|
-| [Install ProLeak](https://proleak.kidev.org/install/) | Windows and Linux *(Proton)* installers |
-| [Documentation](https://proleak.kidev.org/) | Features, settings and troubleshooting |
-| [Your first plugin](https://proleak.kidev.org/first-plugin/) | A working plugin in ten minutes |
+| [Install ProLeak](https://proleak.org/install/) | Windows and Linux *(Proton)* installers |
+| [Documentation](https://proleak.org/) | Features, settings and troubleshooting |
+| [Your first plugin](https://proleak.org/first-plugin/) | A working plugin in ten minutes |
 | [Issues and Requests](https://github.com/LegionTD2-Modding/ProLeak/issues) | Share bugs and ask for things you want in ProLeak |
 
 The project is maintained by [kidev](https://github.com/Kidev) and followed by the developers of Legion TD 2.
